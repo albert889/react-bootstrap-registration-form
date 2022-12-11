@@ -49,6 +49,9 @@ function Form(props) {
             props.getData(formValue);
         }
     }
+    const handleReset = () => {
+        document.getElementById("CustomizationForm").reset();                    
+    }
 
 
     return (
@@ -58,6 +61,7 @@ function Form(props) {
                     <h1 className="text-white mb-4">Fill this form</h1>
                         <MDBCard>
                             <MDBCardBody className="px-4">
+                                <form name="CustomizationForm" id="CustomizationForm">
                                 <MDBRow className="align-items-center pt-4 pb-3">
                                     <MDBCol md="3" className="ps-5">
                                         <h6 className="mb-0">Full name</h6>
@@ -179,6 +183,7 @@ function Form(props) {
                                         </div>
                                     </MDBCol>
                                 </MDBRow>
+                                </form>
 
                                 <hr className="mx-n3" />
 
@@ -186,7 +191,7 @@ function Form(props) {
                                     <MDBBtn onClick={handleSubmit} type="submit" className="my-4" size="lg">
                                         Submit
                                     </MDBBtn>
-                                    <MDBBtn className="my-4 btn-warning" size="lg">
+                                    <MDBBtn onClick={handleReset} type="reset" className="my-4 btn-warning" size="lg">
                                         Reset
                                     </MDBBtn>
                                 </div>
