@@ -50,6 +50,27 @@ function Form(props) {
         }
     }
 
+    const onReset = (e) => {
+        e.preventDefault();
+    
+        setFormValue({
+            fname: "",
+            address: "",
+            gender: "",
+            birthdate: new Date(),
+            cv: "",
+            photo:"",
+            certificate:""
+        });
+    
+        document.getElementById('photo').value = ""
+        document.getElementById('cv').value = ""
+        document.getElementById('certificate').value = ""
+        document.getElementById('fname').value = ""
+        document.getElementById('address').value = ""
+        
+      };
+
 
     return (
         <MDBContainer fluid>
@@ -68,7 +89,7 @@ function Form(props) {
                                             value={formValue.fname}
                                             name="fname"
                                             onChange={onChange}
-                                            id="validationCustom01"
+                                            id="fname"
                                             required
                                             label="Full Name"
                                             size="lg"
@@ -85,7 +106,7 @@ function Form(props) {
                                     </MDBCol>
 
                                     <MDBCol md="9" className="pe-5">
-                                        <MDBTextArea name="address" onChange={(e) => onChange(e)} label="Address" id="textAreaExample" rows={3} />
+                                        <MDBTextArea name="address" onChange={(e) => onChange(e)} label="Address" id="address" rows={3} />
                                     </MDBCol>
                                 </MDBRow>
 
@@ -186,7 +207,7 @@ function Form(props) {
                                     <MDBBtn onClick={handleSubmit} type="submit" className="my-4" size="lg">
                                         Submit
                                     </MDBBtn>
-                                    <MDBBtn className="my-4 btn-warning" size="lg">
+                                    <MDBBtn className="my-4 btn-warning" size="lg" onClick={onReset}>
                                         Reset
                                     </MDBBtn>
                                 </div>
