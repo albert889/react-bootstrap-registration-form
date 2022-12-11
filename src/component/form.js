@@ -37,7 +37,7 @@ function Form(props) {
 
     const handleChangeImage = (e) => {
         debugger
-        setFormValue({ ...formValue, [e.target.name]: e.target.files[0] });
+        setFormValue({ ...formValue, [e.target.name]: e.target.files[0].name });
     }
 
     const handleSubmit = () => {

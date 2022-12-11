@@ -10,15 +10,9 @@ function Datatable(props) {
                     <td>{item.address}</td>
                     <td>{item.gender}</td>
                     <td>{item.birthdate?.toLocaleString()}</td>
-                    <td>
-                        <img src={item.cv.name} className="img-thumbnail" alt="CV"/>
-                    </td>
-                    <td>
-                        <img src={item.photo} className="img-thumbnail" alt="Foto"/>
-                    </td>
-                    <td>
-                        <img src={item.certificate} className="img-thumbnail" alt="Sertifikat"/>
-                    </td>
+                    <td>{item.cv}</td>
+                    <td>{item.photo}</td>
+                    <td>{item.certificate}</td>
                 </tr>
             )
         })
