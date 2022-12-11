@@ -41,7 +41,13 @@ function Form(props) {
     }
 
     const handleSubmit = () => {
-        props.getData(formValue);
+        if(formValue.fname == "" || formValue.address == "" || formValue.gender == "" || formValue.birthdate == ""){
+            alert("Semua inputan belum terisi");
+        }else if(formValue.cv == "" || formValue.photo == "" || formValue.certificate == ""){
+            alert("Semua file belum dimasukkan");
+        }else{
+            props.getData(formValue);
+        }
     }
 
 
